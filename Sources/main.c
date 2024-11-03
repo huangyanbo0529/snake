@@ -56,7 +56,7 @@ int main(int argc, char* argv[])
         }
 
         COORD new_snake_head = get_new_snake_head(direction);
-        sname_move(new_snake_head);
+        snake_move(new_snake_head);
 
         // 判断是否撞墙
         int ret = is_snake_move_to_wall(new_snake_head);
@@ -64,6 +64,7 @@ int main(int argc, char* argv[])
         {
             break;
         }
+
 
         // 判断是否吃到食物
         COORD food_pos = get_food_position();
@@ -81,7 +82,7 @@ int main(int argc, char* argv[])
         }
 
         // 周期性刷新食物
-        void refresh_food_loop();
+        refresh_food_loop();
         Sleep(200);
         food_refresh_time_add();
     }

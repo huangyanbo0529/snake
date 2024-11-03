@@ -25,7 +25,7 @@ void   draw_init_snake(void);
 int    get_snake_body_length(void);
 COORD* get_snake(void);
 COORD  get_new_snake_head(Direction dir);
-void   sname_move(COORD new_head);
+void   snake_move(COORD new_head);
 int    is_snake_move_to_wall(COORD new_head);
 int    is_snake_eat_food(COORD new_head, COORD food_pos);
 int    is_snake_eat_self(COORD new_head);

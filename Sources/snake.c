@@ -57,7 +57,7 @@ COORD get_new_snake_head(Direction dir)
     return pos;
 }
 
-void sname_move(COORD new_head)
+void snake_move(COORD new_head)
 {
     int i = 0;
     last_body_pos.X = snake[snake_body_length].X;
@@ -73,11 +73,13 @@ void sname_move(COORD new_head)
         snake[i].X = snake[i - 1].X;
         snake[i].Y = snake[i - 1].Y;
         goto_xy(snake[i].X, snake[i].Y);
+        // 绘制身体
         putchar('+');
     }
     snake[0].X = new_head.X;
     snake[0].Y = new_head.Y;
     goto_xy(snake[0].X, snake[0].Y);
+    // 绘制新的蛇头
     putchar('O');
 }
 
@@ -94,9 +96,9 @@ int is_snake_move_to_wall(COORD new_head)
     {
         goto_xy(0, HEIGHT + 2);
         printf("Game Over!!!\r\n");
-        return -1;
+        return 0;
     }
-    return 0;
+    return -1;
 }
 
 int is_snake_eat_food(COORD new_head, COORD food_pos)
