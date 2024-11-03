@@ -1,0 +1,23 @@
+{
+  "files.defaultLanguage": "c",
+  "editor.formatOnType": true,
+  "code-runner.runInTerminal": true,
+  "code-runner.executorMap": {
+    "c": "cd $dir && gcc $fileName -o ./output/$fileNameWithoutExt.exe -Wall -O2 -m64 -lm -static-libgcc -finput-charset=UTF-8 -fexec-charset=GBK -D__USE_MINGW_ANSI_STDIO && ./output/$fileNameWithoutExt.exe",
+    "cpp": "cd $dir && g++ '$fileName -o ./output/$fileNameWithoutExt.exe -Wall -O2 -m64 -static-libgcc -finput-charset=UTF-8 -fexec-charset=GBK && ./output/$fileNameWithoutExt.exe"
+  },
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.preserveFocus": true,
+  "code-runner.clearPreviousOutput": false,
+  "code-runner.ignoreSelection": true,
+  "code-runner.fileDirectoryAsCwd": true,
+  "C_Cpp.clang_format_sortIncludes": true,
+  "clangd.fallbackFlags": [
+    // 引入工程目录下的资源
+    "-I${workspaceFolder}\\Headers",
+    // 引入系统环境资源
+    "-ID:\\Applications\\mingw64\\include",
+    "-ID:\\Applications\\mingw64\\x86_64-w64-mingw32\\include",
+    "-ID:\\Applications\\mingw64\\x86_64-w64-mingw32\\13.2.0\\include\\c++"
+  ]
+}
